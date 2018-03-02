@@ -6,38 +6,13 @@ import Auth from '../../lib/Auth';
 
 class PlacesNew extends React.Component {
   state = {
-    name: '',
+    title: '',
     image: '',
-    cities: [
-      {
-        name: '',
-        image: '',
-        location: {
-          lat: '',
-          lng: ''
-        },
-        places: [
-          {
-            title: '',
-            image: '',
-            location: {
-              lat: '',
-              lng: ''
-            }
-          },
-          {
-            title: '',
-            image: '',
-            location: {
-              lat: '',
-              lng: ''
-            }
-          }
-        ]
-      }
-    ]
-
-  };
+    location: {
+      lat: '',
+      lng: ''
+    }
+  }
 
   handleChange = ({ target: { name, value } }) => {
     const country = Object.assign({}, this.state.country, { [name]: value });

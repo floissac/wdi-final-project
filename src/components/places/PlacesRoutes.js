@@ -3,16 +3,21 @@ import { Switch, Route } from 'react-router-dom';
 
 import CountriesIndex from './CountriesIndex';
 import CitiesIndex from  './CitiesIndex';
+import CitiesShow from './CitiesShow';
+import PlacesShow from './PlacesShow';
 import PlacesNew from './PlacesNew';
 import PlacesEdit from './PlacesEdit';
+
 
 const PlacesRoutes = () => {
   return (
     <Switch>
-      <Route exact path="/" component={CountriesIndex} />
-      <Route path="/countries/new" component={PlacesNew} />
+      <Route path="/countries/:countryId/cities/:cityId/places/:placesId" component={PlacesShow} />
+      <Route path="/countries/:countryId/cities/:cityId" component={CitiesShow} />
       <Route path="/countries/:id/edit" component={PlacesEdit} />
+      <Route path="/countries/new" component={PlacesNew} />
       <Route path="/countries/:id" component={CitiesIndex} />
+      <Route exact path="/" component={CountriesIndex} />
     </Switch>
   );
 };

@@ -1,6 +1,8 @@
-const router = require('express').Router();
-const auth  = require('../controllers/auth');
-const countries  = require('../controllers/countries');
+const router      = require('express').Router();
+const auth        = require('../controllers/auth');
+const countries   = require('../controllers/countries');
+const cities      = require('../controllers/cities');
+const places      = require('../controllers/places');
 const secureRoute = require('../lib/secureRoute');
 
 // routes go here
@@ -13,6 +15,15 @@ router.route('/countries/:id')
   .get(countries.show)
   .put(secureRoute, countries.update)
   .delete(secureRoute, countries.delete);
+
+router.route('/countries/:countryId/cities/:cityId')
+  .get(cities.show);
+
+router.route('/countries/:countryId/cities/:cityId/places')
+  .post(cities.placesCreate);
+
+router.route('/countries/:countryId/cities/:cityId/places/:placesId')
+  .post(places.show);
 
 router.route('/register')
   .post(auth.register);

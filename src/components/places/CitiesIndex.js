@@ -18,12 +18,12 @@ class CitiesIndex extends React.Component {
       .catch(err => console.log(err));
   }
 
-  deletePlace = () => {
-    Axios
-      .delete(`/api/countries/${this.props.match.params.id}`)
-      .then(() => this.props.history.push('/'))
-      .catch(err => console.log(err));
-  }
+  // deletePlace = () => {
+  //   Axios
+  //     .delete(`/api/countries/${this.props.match.params.id}`)
+  //     .then(() => this.props.history.push('/'))
+  //     .catch(err => console.log(err));
+  // }
 
   render() {
     return (
@@ -33,8 +33,8 @@ class CitiesIndex extends React.Component {
           {this.state.country.name && this.state.country.cities.map(city => {
             return(
               <div key={city.id} className="image-tile col-md-4 col-sm-6 col-xs-12">
-                <Link to={`/countries/${city.id}`}>
-                  <p>{city.city}</p>
+                <Link to={`/countries/${this.state.country.id}/cities/${city.id}`}>
+                  <p>{city.name}</p>
                   <img src={city.image} className="img-responsive" />
                 </Link>
               </div>
