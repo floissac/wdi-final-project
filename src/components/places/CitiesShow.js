@@ -30,30 +30,28 @@ class CitiesShow extends React.Component {
   render() {
     return (
       <div>
-        <BackButton history={this.props.history} />
-        <h3>Spots in { this.state.city.name}</h3>
-        <ul>
+        <div className="row">
+          <BackButton history={this.props.history} />
+          <h2>Spots in { this.state.city.name}</h2>
+
           { this.state.city.name && this.state.city.places.map(place =>
-            <li key={place.id}>{ place.title }</li>
+            <div key={place.id}>
+
+
+              <div className="image-tile col-md-6">
+                <div key={place.id} className="image-tile col-md-4 col-sm-6 col-xs-12">
+                  <Link to={`/countries/${place.id}`}>
+                    <h4>{ place.title }</h4>
+                    <img src={place.image} className="img-responsive" />
+                  </Link>
+                </div>
+              </div>
+            </div>
           )}
-        </ul>
+        </div>
       </div>
 
-      // <div className="row">
-      //   <div className="image-tile col-md-6">
 
-      //     {this.state.country.name && this.state.country.cities.places.map(place => {
-      //       return(
-      //         <div key={place.id} className="image-tile col-md-4 col-sm-6 col-xs-12">
-      //           <Link to={`/countries/${place.id}`}>
-      //             <p>{place.title}</p>
-      //             <img src={place.image} className="img-responsive" />
-      //           </Link>
-      //         </div>
-      //       );
-      //     })}
-      //   </div>
-      // </div>
     );
   }
 }
