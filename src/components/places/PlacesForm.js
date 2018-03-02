@@ -2,14 +2,14 @@ import React from 'react';
 
 import BackButton from '../utility/BackButton';
 
-function PlacesForm({ history, handleSubmit, handleChange, country }) {
+function PlacesForm({ history, handleSubmit, handleChange, country}) {
   return (
     <div className="row">
       <div className="page-banner col-md-12">
         <BackButton history={history} />
       </div>
       <form onSubmit={handleSubmit} className="col-md-6">
-        <div className="form-group">
+        {/* <div className="form-group">
           <label htmlFor="country">Country</label>
           <input
             type="text"
@@ -19,7 +19,7 @@ function PlacesForm({ history, handleSubmit, handleChange, country }) {
             value={country.name}
             onChange={handleChange}
           />
-        </div>
+        </div> */}
         <div className="form-group">
           <label htmlFor="city">City</label>
           <input
