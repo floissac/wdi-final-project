@@ -2,7 +2,7 @@ import React from 'react';
 import Axios from 'axios';
 import { Link } from 'react-router-dom';
 
-import Auth from '../../lib/Auth';
+// import Auth from '../../lib/Auth';
 
 class CountriesIndex extends React.Component {
   state = {
@@ -20,11 +20,11 @@ class CountriesIndex extends React.Component {
     return (
       <div>
         <div className="row">
-          <div className="page-banner col-md-12">
+          {/* <div className="page-banner col-md-12">
             { Auth.isAuthenticated() && <Link to="/countries/new" className="main-button">
               <i className="fa fa-plus" aria-hidden="true"></i>Add Place
             </Link>}
-          </div>
+          </div> */}
           {this.state.countries.map(country => {
             return(
               <div key={country.id} className="image-tile col-md-4 col-sm-6 col-xs-12">

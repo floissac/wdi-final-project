@@ -40,11 +40,68 @@ const countryData = [
             }
           }
         ]
+      },
+      {
+        name: 'Manchester',
+        image: 'https://coresites-cdn.factorymedia.com/kingpin_new/wp-content/uploads/2014/07/SAM4851.jpg',
+        location: {
+          lat: 51.5074,
+          lng: 0.1278
+        },
+        places: [
+          {
+            title: 'dope spot',
+            image: 'http://www.llsb.com/wp-content/uploads/2014/01/VikkiPhoto2-Sam.jpg',
+            location: {
+              lat: 40.432087,
+              lng: 116.570375
+            }
+          },
+          {
+            title: 'Gnarly spot',
+            image: 'http://www.iskatehere.com/media//1244088791_121522_FULL.jpg',
+            location: {
+              lat: 20.684295,
+              lng: -88.567772
+            }
+          }
+        ]
       }
     ]
   }, {
     name: 'Brazil',
     image: 'https://s3.amazonaws.com/dsg.files.app.content.prod/gereports/wp-content/uploads/2014/11/13110217/Rio.jpg',
+    cities: [
+      {
+        name: 'Rio',
+        image: 'https://i.pinimg.com/originals/49/f3/f6/49f3f69a61267fb9ecced0d942c42372.jpg',
+        location: {
+          lat: 51.5074,
+          lng: 0.1278
+        },
+        places: [
+          {
+            title: 'dope spot',
+            image: 'https://image.redbull.com/rbcom/010/2014-11-24/1331691746154_2/0012/0/0/0/2000/3000/1500/1/sergio-munoz-frontside-flip-madrid-sergio-alvarez.jpg',
+            location: {
+              lat: 40.432087,
+              lng: 116.570375
+            }
+          },
+          {
+            title: 'Gnarly spot',
+            image: 'https://farm4.static.flickr.com/3047/2755462145_ed7ecfe95d_b.jpg',
+            location: {
+              lat: 20.684295,
+              lng: -88.567772
+            }
+          }
+        ]
+      }
+    ]
+  }, {
+    name: 'Spain',
+    image: 'http://quartersnacks.com/wp-content/uploads/2011/08/bank-nieghborhood.jpg',
     cities: [
       {
         name: 'Rio',

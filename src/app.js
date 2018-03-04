@@ -19,7 +19,7 @@ class App extends React.Component {
         <div className="container">
           <header>
             <h1><Link to="/">Dérive </Link></h1>
-            <h2>For the best local street spots</h2>
+            <h4>For the best local street spots</h4>
             <Navbar />
             <hr />
           </header>

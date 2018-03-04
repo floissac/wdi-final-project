@@ -5,6 +5,7 @@ import BackButton from '../utility/BackButton';
 function PlacesForm({ history, handleSubmit, handleChange, country}) {
   return (
     <div className="row">
+      <h1>hi</h1>
       <div className="page-banner col-md-12">
         <BackButton history={history} />
       </div>

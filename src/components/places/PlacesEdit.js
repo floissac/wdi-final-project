@@ -7,48 +7,30 @@ import Auth from '../../lib/Auth';
 
 class PlacesEdit extends React.Component {
   state = {
-    name: '',
-    image: '',
-    cities: [
+
+    places: [
       {
-        name: '',
+        title: '',
         image: '',
         location: {
           lat: '',
           lng: ''
-        },
-        places: [
-          {
-            title: '',
-            image: '',
-            location: {
-              lat: '',
-              lng: ''
-            }
-          },
-          {
-            title: '',
-            image: '',
-            location: {
-              lat: '',
-              lng: ''
-            }
-          }
-        ]
+        }
       }
     ]
+
 
   };
 
   componentDidMount() {
     Axios
-      .get(`/api/countries/${this.props.match.params.id}`)
-      .then(res => this.setState({ country: res.data }))
+      .get(`/api/countries/${this.props.match.params.countryId}/cities/${this.props.match.params.cityId}/places/${this.props.match.params.placeId}`)
+      .then(res => this.setState({ place: res.data }))
       .catch(err => console.log(err));
   }
 
   handleChange = ({ target: { name, value } }) => {
-    const country = Object.assign({}, this.state.country, { [name]: value });
+    const country = Object.assign({}, this.state.place, { [name]: value });
     this.setState({ country });
   }
 
@@ -56,11 +38,11 @@ class PlacesEdit extends React.Component {
     e.preventDefault();
 
     Axios
-      .put(`/api/countries/${this.props.match.params.id}`, this.state.country,
+      .put(`/api/countries/${this.props.match.params.countryId}/cities/${this.props.match.params.cityId}/places/${this.props.match.params.placeId}`, this.state.place,
         {
           headers: { 'Authorization': `Bearer ${Auth.getToken()}` }
         })
-      .then(res => this.props.history.push(`/countries/${res.data.id}`))
+      .then(res => this.props.history.push(`/countries/${this.props.match.params.countryId}/cities/${this.props.match.params.cityId}/places/${res.data.id}`))
       .catch(err => console.log(err));
   }
 
@@ -70,7 +52,7 @@ class PlacesEdit extends React.Component {
         history={this.props.history}
         handleSubmit={this.handleSubmit}
         handleChange={this.handleChange}
-        country={this.state.country}
+        place={this.state.place}
       />
     );
   }

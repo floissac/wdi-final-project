@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 // import Auth from '../../lib/Auth';
 import BackButton from '../utility/BackButton';
+// import GoogleMap from '../utility/GoogleMap';
 
 class CitiesShow extends React.Component {
   state = {
@@ -36,14 +37,15 @@ class CitiesShow extends React.Component {
 
           { this.state.city.name && this.state.city.places.map(place =>
             <div key={place.id}>
-
+              {/* <GoogleMap key={place.id} center={this.state.place.location} /> */}
 
               <div className="image-tile col-md-6">
                 <div key={place.id} className="image-tile col-md-4 col-sm-6 col-xs-12">
-                  <Link to={`/countries/${place.id}`}>
+                  <Link to={`/countries/${this.props.match.params.countryId}/cities/${this.state.city.id}/places/${place.id}`}>
                     <h4>{ place.title }</h4>
                     <img src={place.image} className="img-responsive" />
                   </Link>
+
                 </div>
               </div>
             </div>

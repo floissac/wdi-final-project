@@ -18,13 +18,6 @@ class CitiesIndex extends React.Component {
       .catch(err => console.log(err));
   }
 
-  // deletePlace = () => {
-  //   Axios
-  //     .delete(`/api/countries/${this.props.match.params.id}`)
-  //     .then(() => this.props.history.push('/'))
-  //     .catch(err => console.log(err));
-  // }
-
   render() {
     return (
       <div className="row">
